@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+    <!-- Cambio para crear la tabla 'roles' -->
+    <changeSet id="1" author="juan">
+        <createTable tableName="payments_barber_app">
+            <column name="id" type="UUID">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="date" type="timestamp">
+                <constraints unique="true" nullable="false"/>
+            </column>
+            <column name="mount" type="numeric(12,2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="barber_shop_id" type="uuid">
+                <constraints nullable="false"/>
+            </column>
+            <column name="barber_id" type="uuid">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="payments_barber_app" baseColumnNames="barber_shop_id" constraintName="barber_shop_id_fk" referencedTableName="barber_shops"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="payments_barber_app" baseColumnNames="barber_id" constraintName="barber_id_fk" referencedTableName="people"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+</databaseChangeLog>

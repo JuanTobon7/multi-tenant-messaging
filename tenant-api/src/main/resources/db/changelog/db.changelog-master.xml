@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <!-- Include all your other changelog files here -->
+    <include file="db/changelog/1_add_states_table.xml" />
+    <include file="db/changelog/2_add_cities_table.xml" />
+    <include file="db/changelog/3_add_barber_shops_table.xml" />
+    <include file="db/changelog/4_add_products_table.xml" />
+    <include file="db/changelog/5_add_prices_services_table.xml" />
+    <include file="db/changelog/6_add_roles_table.xml" />
+    <include file="db/changelog/7_add_people_table.xml" />
+    <include file="db/changelog/8_add_phone_numbers_table.xml" />
+    <include file="db/changelog/9_add_barber_shop_shedules_table.xml" />
+    <include file="db/changelog/10_add_payments_barber_app_table.xml" />
+    <include file="db/changelog/11_add_conversation_chat_bot_table.xml" />
+    <include file="db/changelog/12_add_reservation_people_haircut_table.xml" />
+    <include file="db/changelog/13_add_historic_price_table.xml" />
+    <include file="db/changelog/14_add_payments_product_table.xml" />
+</databaseChangeLog>

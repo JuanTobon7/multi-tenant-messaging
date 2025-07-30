@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+    <!-- Cambio para crear la tabla 'roles' -->
+    <changeSet id="1" author="juan">
+        <createTable tableName="conversation_chat_bot">
+            <column name="id" type="UUID">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="barber_shop_id" type="uuid">
+                <constraints nullable="false"/>
+            </column>
+            <column name="person_id" type="uuid">
+                <constraints nullable="false"/>
+            </column>
+            <column name="firebase_id" type="text">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="conversation_chat_bot" baseColumnNames="barber_shop_id" constraintName="barber_shop_id_fk" referencedTableName="barber_shops"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="conversation_chat_bot" baseColumnNames="person_id" constraintName="barber_id_fk" referencedTableName="people"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+</databaseChangeLog>
